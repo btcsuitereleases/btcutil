@@ -1,4 +1,4 @@
-// Copyright (c) 2013-2014 Conformal Systems LLC.
+// Copyright (c) 2013-2014 The btcsuite developers
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
@@ -41,11 +41,8 @@ func (t *Tx) Sha() *wire.ShaHash {
 		return t.txSha
 	}
 
-	// Generate the transaction hash.  Ignore the error since TxSha can't
-	// currently fail.
-	sha, _ := t.msgTx.TxSha()
-
 	// Cache the hash and return it.
+	sha := t.msgTx.TxSha()
 	t.txSha = &sha
 	return &sha
 }

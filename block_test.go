@@ -1,4 +1,4 @@
-// Copyright (c) 2013-2014 Conformal Systems LLC.
+// Copyright (c) 2013-2014 The btcsuite developers
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
@@ -43,11 +43,7 @@ func TestBlock(t *testing.T) {
 
 	// Request the sha multiple times to test generation and caching.
 	for i := 0; i < 2; i++ {
-		sha, err := b.Sha()
-		if err != nil {
-			t.Errorf("Sha: %v", err)
-			continue
-		}
+		sha := b.Sha()
 		if !sha.IsEqual(wantSha) {
 			t.Errorf("Sha #%d mismatched sha - got %v, want %v", i,
 				sha, wantSha)

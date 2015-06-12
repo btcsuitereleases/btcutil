@@ -1,4 +1,4 @@
-// Copyright (c) 2014 Conformal Systems LLC.
+// Copyright (c) 2014 The btcsuite developers
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
@@ -643,7 +643,7 @@ func TestErrors(t *testing.T) {
 		{
 			name: "pubkey not on curve",
 			key:  "xpub661MyMwAqRbcFtXgS5sYJABqqG9YLmC4Q1Rdap9gSE8NqtwybGhePY2gZ1hr9Rwbk95YadvBkQXxzHBSngB8ndpW6QH7zhhsXZ2jHyZqPjk",
-			err:  errors.New("pubkey isn't on secp265k1 curve"),
+			err:  errors.New("pubkey isn't on secp256k1 curve"),
 		},
 		{
 			name:      "unsupported version",
